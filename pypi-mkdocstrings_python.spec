@@ -4,18 +4,17 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-mkdocstrings_python
-Version  : 0.9.0
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/28/a9/a09182a5cddb5b3b6b62b3b2af35f76ed3daf42ae43ef223d86eb876d1ea/mkdocstrings-python-0.9.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/28/a9/a09182a5cddb5b3b6b62b3b2af35f76ed3daf42ae43ef223d86eb876d1ea/mkdocstrings-python-0.9.0.tar.gz
+Version  : 0.10.1
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/42/1e/27990ab4070bd475a112b7166b78b015f2069a8baa285bdee36475cc5cbe/mkdocstrings_python-0.10.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/42/1e/27990ab4070bd475a112b7166b78b015f2069a8baa285bdee36475cc5cbe/mkdocstrings_python-0.10.1.tar.gz
 Summary  : A Python handler for mkdocstrings.
 Group    : Development/Tools
 License  : ISC
 Requires: pypi-mkdocstrings_python-python = %{version}-%{release}
 Requires: pypi-mkdocstrings_python-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(pdm)
-BuildRequires : pypi(pdm_pep517)
+BuildRequires : pypi(pdm_backend)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -46,10 +45,10 @@ python3 components for the pypi-mkdocstrings_python package.
 
 
 %prep
-%setup -q -n mkdocstrings-python-0.9.0
-cd %{_builddir}/mkdocstrings-python-0.9.0
+%setup -q -n mkdocstrings_python-0.10.1
+cd %{_builddir}/mkdocstrings_python-0.10.1
 pushd ..
-cp -a mkdocstrings-python-0.9.0 buildavx2
+cp -a mkdocstrings_python-0.10.1 buildavx2
 popd
 
 %build
@@ -57,7 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683300060
+export SOURCE_DATE_EPOCH=1683559545
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
