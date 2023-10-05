@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-mkdocstrings_python
-Version  : 1.7.1
-Release  : 17
-URL      : https://files.pythonhosted.org/packages/ca/1b/54f6717ce7d871106c883d84f4592790b37f23bd4a93cc043c9438e3b28c/mkdocstrings_python-1.7.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ca/1b/54f6717ce7d871106c883d84f4592790b37f23bd4a93cc043c9438e3b28c/mkdocstrings_python-1.7.1.tar.gz
+Version  : 1.7.2
+Release  : 18
+URL      : https://files.pythonhosted.org/packages/4a/65/48f0b7bdb78f0ab5ba642cdb0b0e89876ba83d78868599feb8f9a538748c/mkdocstrings_python-1.7.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/4a/65/48f0b7bdb78f0ab5ba642cdb0b0e89876ba83d78868599feb8f9a538748c/mkdocstrings_python-1.7.2.tar.gz
 Summary  : A Python handler for mkdocstrings.
 Group    : Development/Tools
 License  : ISC
@@ -45,10 +45,10 @@ python3 components for the pypi-mkdocstrings_python package.
 
 
 %prep
-%setup -q -n mkdocstrings_python-1.7.1
-cd %{_builddir}/mkdocstrings_python-1.7.1
+%setup -q -n mkdocstrings_python-1.7.2
+cd %{_builddir}/mkdocstrings_python-1.7.2
 pushd ..
-cp -a mkdocstrings_python-1.7.1 buildavx2
+cp -a mkdocstrings_python-1.7.2 buildavx2
 popd
 
 %build
@@ -56,7 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1695927173
+export SOURCE_DATE_EPOCH=1696519607
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
