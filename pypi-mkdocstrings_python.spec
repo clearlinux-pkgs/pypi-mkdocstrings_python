@@ -7,7 +7,7 @@
 #
 Name     : pypi-mkdocstrings_python
 Version  : 1.7.5
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/7d/53/5c34584db0c9e5c49a22823577715712355ffe023a338a397550334cc5cb/mkdocstrings_python-1.7.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7d/53/5c34584db0c9e5c49a22823577715712355ffe023a338a397550334cc5cb/mkdocstrings_python-1.7.5.tar.gz
 Summary  : A Python handler for mkdocstrings.
@@ -38,6 +38,9 @@ python components for the pypi-mkdocstrings_python package.
 Summary: python3 components for the pypi-mkdocstrings_python package.
 Group: Default
 Requires: python3-core
+Provides: pypi(mkdocstrings_python)
+Requires: pypi(griffe)
+Requires: pypi(mkdocstrings)
 
 %description python3
 python3 components for the pypi-mkdocstrings_python package.
