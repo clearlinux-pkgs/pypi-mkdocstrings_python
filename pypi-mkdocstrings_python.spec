@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : pypi-mkdocstrings_python
-Version  : 1.10.8
-Release  : 36
-URL      : https://files.pythonhosted.org/packages/6b/ae/21b26c1fd62c8dd51ecefc8e848c14ca8f0dfdfeb903deeb20e86fb28ad1/mkdocstrings_python-1.10.8.tar.gz
-Source0  : https://files.pythonhosted.org/packages/6b/ae/21b26c1fd62c8dd51ecefc8e848c14ca8f0dfdfeb903deeb20e86fb28ad1/mkdocstrings_python-1.10.8.tar.gz
+Version  : 1.10.9
+Release  : 37
+URL      : https://files.pythonhosted.org/packages/d8/df/c0c09bf79f1329da2422b5d1d2d4d84070aee7cf7f99df98d7b78be066a9/mkdocstrings_python-1.10.9.tar.gz
+Source0  : https://files.pythonhosted.org/packages/d8/df/c0c09bf79f1329da2422b5d1d2d4d84070aee7cf7f99df98d7b78be066a9/mkdocstrings_python-1.10.9.tar.gz
 Summary  : A Python handler for mkdocstrings.
 Group    : Development/Tools
 License  : ISC
@@ -40,6 +40,7 @@ Group: Default
 Requires: python3-core
 Provides: pypi(mkdocstrings_python)
 Requires: pypi(griffe)
+Requires: pypi(mkdocs_autorefs)
 Requires: pypi(mkdocstrings)
 
 %description python3
@@ -47,10 +48,10 @@ python3 components for the pypi-mkdocstrings_python package.
 
 
 %prep
-%setup -q -n mkdocstrings_python-1.10.8
-cd %{_builddir}/mkdocstrings_python-1.10.8
+%setup -q -n mkdocstrings_python-1.10.9
+cd %{_builddir}/mkdocstrings_python-1.10.9
 pushd ..
-cp -a mkdocstrings_python-1.10.8 buildavx2
+cp -a mkdocstrings_python-1.10.9 buildavx2
 popd
 
 %build
@@ -58,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1723668310
+export SOURCE_DATE_EPOCH=1725295182
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
