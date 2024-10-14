@@ -1,5 +1,5 @@
 PKG_NAME := pypi-mkdocstrings_python
-URL = https://files.pythonhosted.org/packages/fc/ba/534c934cd0a809f51c91332d6ed278782ee4126b8ba8db02c2003f162b47/mkdocstrings_python-1.11.1.tar.gz
+URL = https://files.pythonhosted.org/packages/61/19/7b186a49a957611270d6c4fc156face8748cf98680a40c00b5b0b7008fe1/mkdocstrings_python-1.12.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
