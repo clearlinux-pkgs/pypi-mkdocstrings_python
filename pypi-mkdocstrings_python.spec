@@ -6,13 +6,14 @@
 # autospec commit: f35655a
 #
 Name     : pypi-mkdocstrings_python
-Version  : 1.12.1
-Release  : 40
-URL      : https://files.pythonhosted.org/packages/61/19/7b186a49a957611270d6c4fc156face8748cf98680a40c00b5b0b7008fe1/mkdocstrings_python-1.12.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/61/19/7b186a49a957611270d6c4fc156face8748cf98680a40c00b5b0b7008fe1/mkdocstrings_python-1.12.1.tar.gz
+Version  : 1.12.2
+Release  : 41
+URL      : https://files.pythonhosted.org/packages/23/ec/cb6debe2db77f1ef42b25b21d93b5021474de3037cd82385e586aee72545/mkdocstrings_python-1.12.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/23/ec/cb6debe2db77f1ef42b25b21d93b5021474de3037cd82385e586aee72545/mkdocstrings_python-1.12.2.tar.gz
 Summary  : A Python handler for mkdocstrings.
 Group    : Development/Tools
 License  : ISC
+Requires: pypi-mkdocstrings_python-license = %{version}-%{release}
 Requires: pypi-mkdocstrings_python-python = %{version}-%{release}
 Requires: pypi-mkdocstrings_python-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -24,6 +25,14 @@ BuildRequires : pypi(pdm_backend)
 %description
 <h1 align="center">mkdocstrings-python</h1>
 <p align="center">A Python handler for <a href="https://github.com/mkdocstrings/mkdocstrings"><i>mkdocstrings</i></a>.</p>
+
+%package license
+Summary: license components for the pypi-mkdocstrings_python package.
+Group: Default
+
+%description license
+license components for the pypi-mkdocstrings_python package.
+
 
 %package python
 Summary: python components for the pypi-mkdocstrings_python package.
@@ -48,10 +57,10 @@ python3 components for the pypi-mkdocstrings_python package.
 
 
 %prep
-%setup -q -n mkdocstrings_python-1.12.1
-cd %{_builddir}/mkdocstrings_python-1.12.1
+%setup -q -n mkdocstrings_python-1.12.2
+cd %{_builddir}/mkdocstrings_python-1.12.2
 pushd ..
-cp -a mkdocstrings_python-1.12.1 buildavx2
+cp -a mkdocstrings_python-1.12.2 buildavx2
 popd
 
 %build
@@ -59,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1728915738
+export SOURCE_DATE_EPOCH=1729444321
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,6 +112,8 @@ ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-mkdocstrings_python
+cp %{_builddir}/mkdocstrings_python-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-mkdocstrings_python/ff0577b142329bfab2d8bb046434566ef71c5bb8 || :
 python3 -m installer --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -119,6 +130,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-mkdocstrings_python/ff0577b142329bfab2d8bb046434566ef71c5bb8
 
 %files python
 %defattr(-,root,root,-)
