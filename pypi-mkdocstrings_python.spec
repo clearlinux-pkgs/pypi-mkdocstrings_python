@@ -7,7 +7,7 @@
 #
 Name     : pypi-mkdocstrings_python
 Version  : 1.15.0
-Release  : 48
+Release  : 49
 URL      : https://files.pythonhosted.org/packages/28/5e/ea531f1798d6b614f87b7a1191f8bfda864767adecef3c75ec87f30e0a3d/mkdocstrings_python-1.15.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/28/5e/ea531f1798d6b614f87b7a1191f8bfda864767adecef3c75ec87f30e0a3d/mkdocstrings_python-1.15.0.tar.gz
 Summary  : A Python handler for mkdocstrings.
